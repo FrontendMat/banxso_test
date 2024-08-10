@@ -1,0 +1,13 @@
+@import "global";
+@import "reset";
+
+body {
+  background-color: var(--bg-color);
+}
+
+.app {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  //height: 100vh;
+}
