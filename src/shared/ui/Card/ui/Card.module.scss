@@ -1,0 +1,89 @@
+.Card {
+  border-radius: var(--border-radius-l);
+  border: 1px solid;
+}
+
+//Padding
+
+.padding0 {
+  padding: 0;
+}
+
+.padding8 {
+  padding: 8px;
+}
+
+.padding24 {
+  padding: 24px;
+}
+
+.padding40 {
+  padding: 40px;
+}
+
+.padding48 {
+  padding: 48px;
+}
+
+.paddingIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 11px;
+}
+
+.paddingText {
+  padding: 8px 14px;
+}
+
+//Colors
+
+.primary {
+  border-color: var(--primary-color);
+}
+.secondary {
+  border-color: var(--secondary-color);
+}
+
+.green {
+  background-color: var(--green-color);
+  color: var(--secondary-color);
+}
+
+.red {
+  background-color: var(--red-color);
+  color: var(--secondary-color);
+}
+
+.yellow {
+  background-color: var(--yellow-color);
+  color: var(--secondary-color);
+}
+
+//Other
+
+.max {
+  width: 100%;
+}
+
+.maxHeight {
+  height: 100%;
+}
+
+.fit_content {
+  width: fit-content;
+}
+
+.overflowHidden {
+  overflow: hidden;
+}
+
+//Border
+
+.border_l {
+  border-radius: var(--border-radius-l);
+}
+
+.border_m {
+  border-radius: var(--border-radius-m);
+}

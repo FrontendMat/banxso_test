@@ -1,9 +1,12 @@
-
+import {Suspense} from "react";
+import {AppRouter} from "@/app/providers/router";
 
 const App = () => {
     return (
         <div className={'app'}>
-            Hello
+            <Suspense fallback="">
+                <AppRouter/>
+            </Suspense>
         </div>
     )
 }

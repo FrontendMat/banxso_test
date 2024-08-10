@@ -1,0 +1,21 @@
+.TeamBlock {
+  min-height: 100%;
+}
+
+.card {
+  max-width: 427px;
+  align-self: stretch;
+}
+
+.arrow {
+  width: 77px;
+}
+
+.button {
+  background-color: var(--primary-color);
+}
+
+.pagination {
+  margin-top: auto;
+  justify-self: end;
+}

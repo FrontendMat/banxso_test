@@ -1,0 +1,13 @@
+.card {
+  position: relative;
+}
+
+.btn_play {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 178px;
+  height: 178px;
+}
