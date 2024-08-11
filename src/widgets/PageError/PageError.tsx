@@ -34,6 +34,7 @@ export const PageError = memo((props: PageErrorProps) => {
     return (
         <Card width={'max'} padding={'24'} maxHeight>
             <Text title={'Error'} size={'m'}/>
+            <button onClick={reloadPage}>Reload</button>
         </Card>
     );
 });

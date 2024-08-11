@@ -9,4 +9,7 @@ export default defineConfig({
             { find: '@', replacement: '/src' },
         ],
     },
+    define: {
+        __API__: JSON.stringify('http://localhost:8000'),
+    },
 })

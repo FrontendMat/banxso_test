@@ -1,10 +1,9 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './RocketBlock.module.scss';
-import {memo, useMemo} from "react";
+import {memo} from "react";
 import {Text} from "@/shared/ui/Text/Text";
 import {HStack, VStack} from "@/shared/ui/Stack";
-import {CustomSwiper} from "@/shared/ui/Swiper/CustomSwiper";
-import {RocketCard} from "@/entities/Rocket/ui/RocketCard/RocketCard";
+import {RocketCardList} from "@/entities/Rocket";
 
 interface RocketBlockProps {
     className?: string
@@ -15,13 +14,6 @@ export const RocketBlock = memo((props: RocketBlockProps) => {
         className,
     } = props;
 
-    const arr = useMemo(() => [
-        <RocketCard/>,
-        <RocketCard/>,
-        <RocketCard/>,
-        <RocketCard/>
-    ], []);
-
     return (
         <div className={classNames('', {}, [className])}>
             <Text
@@ -31,7 +23,7 @@ export const RocketBlock = memo((props: RocketBlockProps) => {
                 className={cls.title}
                 bold
             />
-            <CustomSwiper sliders={arr}/>
+            <RocketCardList/>
             <HStack
                 max
                 className={cls.block}

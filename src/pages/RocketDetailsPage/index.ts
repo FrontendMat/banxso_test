@@ -1,0 +1,1 @@
+export {RocketDetailsPageAsync as RocketDetails} from "../RocketDetailsPage/ui/RocketDetailsPage/RocketDetailsPage.async"

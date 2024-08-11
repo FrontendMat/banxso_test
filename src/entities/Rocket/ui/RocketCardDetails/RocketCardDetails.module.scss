@@ -1,3 +1,25 @@
-.item {
-  border-bottom: 1px solid var(--secondary-color);
+.img {
+  max-width: 791px;
+}
+
+.container {
+  min-width: 0;
+}
+
+.slide {
+  height: 430px;
+  object-fit: cover;
+  border-radius: var(--border-radius-m);
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.sliderTitle {
+  margin: 40px 0 24px 0
+}
+
+.card {
+  display: flex;
 }

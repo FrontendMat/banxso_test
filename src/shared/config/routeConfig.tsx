@@ -1,6 +1,7 @@
 import { RouteProps } from 'react-router-dom'
 import {HomePage} from "@/pages/HomePage";
 import {NotFoundPage} from "@/pages/NotFoundPage";
+import {RocketDetails} from "@/pages/RocketDetailsPage";
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -9,6 +10,7 @@ export type AppRoutesProps = RouteProps & {
 export enum AppRoutes {
     //Public
     HOME = 'home',
+    ROCKET_DETAILS = 'rocket_details',
 
     //Private
 
@@ -18,6 +20,7 @@ export enum AppRoutes {
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.HOME]: '/',
+    [AppRoutes.ROCKET_DETAILS]: '/details/', //+ id
 
     //LAST ROUTE
     [AppRoutes.NOT_FOUND]: '*'
@@ -28,6 +31,10 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.HOME]: {
         path: RoutePath.home,
         element: <HomePage/>,
+    },
+    [AppRoutes.ROCKET_DETAILS]: {
+        path: `${RoutePath.rocket_details}:id`,
+        element: <RocketDetails/>,
     },
 
     //LAST ROUTE

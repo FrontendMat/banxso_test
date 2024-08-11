@@ -1,0 +1,16 @@
+.InformCard {
+  position: relative;
+}
+
+.textBlock {
+  position: absolute;
+  max-width: 468px;
+  bottom: 135px;
+  left: 48px;
+}
+
+.isBlock {
+  .textBlock {
+    bottom: 24px;
+  }
+}

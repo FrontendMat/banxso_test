@@ -1,0 +1,1 @@
+export {InformBlock} from './ui/InformBlock/InformBlock'

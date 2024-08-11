@@ -1,0 +1,17 @@
+.swiper {
+  position: relative;
+}
+
+.fixedSlide {
+  margin-right: 24px;
+  align-self: stretch;
+}
+
+.button {
+  display: flex;
+  background-color: var(--primary-color);
+}
+
+.btnWrapper {
+  margin-top: auto;
+}

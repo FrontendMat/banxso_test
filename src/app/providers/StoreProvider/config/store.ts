@@ -1,6 +1,9 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import {rocketReducer} from "@/entities/Rocket/model/slice/rocketSlice";
 
-const rootReducer = combineReducers({})
+const rootReducer = combineReducers({
+    rocket: rocketReducer
+})
 
 export function createStore () {
     return configureStore({
