@@ -5,6 +5,10 @@ body {
   background-color: var(--bg-color);
 }
 
+.app_modal {
+  font: var(--font-m);
+}
+
 .app {
   width: 100%;
   max-width: 1440px;
