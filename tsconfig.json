@@ -4,13 +4,14 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",
-    "target": "es5",
+    "target": "esnext",
     "types": ["node", "jest"],
     "jsx": "react-jsx",
     "allowJs": true,
     "strict": true,
     "isolatedModules": true,
     "moduleResolution": "node",
+    "preserveValueImports": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
@@ -23,12 +24,12 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "commonJS"
     }
   },
   "include": [
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    "./config/jest/setupTests.ts"
+    "./config/jest/setupTests.ts",
   ]
 }
