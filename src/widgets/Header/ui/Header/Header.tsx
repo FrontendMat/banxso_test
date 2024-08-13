@@ -4,14 +4,12 @@ import {memo, useCallback, useState} from "react";
 import {Card} from "@/shared/ui/Card";
 import {Text} from "@/shared/ui/Text/Text";
 import {HeaderNav} from "../HeaderHav/HeaderNav";
-import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
-import {Modal} from "@/shared/ui/Modal/Modal";
-import {AuthModal} from "@/features/authByEmail/ui/AuthModal/AuthModal";
+import {Button} from "@/shared/ui/Button/Button";
+import {AuthModal} from "@/features/authByEmail";
 import {useSelector} from "react-redux";
 import {getUserAuthData} from "@/entities/User";
 import {useAppDispatch} from "@/shared/lib/hooks/redux";
-import {userActions} from "@/entities/User/model/slice/user";
-import {logoutAuth} from "@/entities/User/model/services/logoutUser/logoutUser";
+import {logoutAuth} from "@/entities/User";
 
 interface HeaderProps {
     className?: string;

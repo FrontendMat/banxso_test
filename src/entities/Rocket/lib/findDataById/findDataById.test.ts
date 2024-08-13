@@ -12,23 +12,23 @@ describe('findDataById', () => {
         expect(result).toEqual(rockets[0]);
     });
 
-    test('should return empty arr if not match id', () => {
+    test('should return undefined if not match id', () => {
         const result = findDataById(rockets, '5');
-        expect(result).toEqual([]);
+        expect(result).toEqual(undefined);
     });
 
-    test('should return empty arr if id undefined', () => {
+    test('should return undefined if id undefined', () => {
         const result = findDataById(rockets, undefined);
-        expect(result).toEqual([]);
+        expect(result).toEqual(undefined);
     });
 
-    test('should return empty arr if rockets undefined', () => {
+    test('should return undefined if rockets undefined', () => {
         const result = findDataById(undefined, '1');
-        expect(result).toEqual([]);
+        expect(result).toEqual(undefined);
     });
 
-    test('should return empty arr if rockets and id undefined', () => {
+    test('should return undefined if rockets and id undefined', () => {
         const result = findDataById(undefined, undefined);
-        expect(result).toEqual([]);
+        expect(result).toEqual(undefined);
     });
 });

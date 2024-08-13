@@ -1,6 +1,6 @@
 import {memo} from "react";
 import cls from "./SwiperButtons.module.scss";
-import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
+import {Button} from "@/shared/ui/Button/Button";
 import {useSwiper} from 'swiper/react';
 import {HStack} from "@/shared/ui/Stack";
 import PrevImg from '@/shared/assets/arr_l_w.png';
