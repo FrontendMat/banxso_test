@@ -1,0 +1,26 @@
+.input {
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius-m);
+    outline: none;
+    font: var(--font-m);
+    color: var(--primary-color);
+    padding: 7px 14px;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+        border: 1px solid var(--primary-color);
+    }
+}
+
+.readonly {
+    &:focus {
+        outline: none;
+        border: 1px solid var(--inverted-bg-color);
+    }
+}
+
+.max {
+    width: 100%;
+}

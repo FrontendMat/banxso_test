@@ -1,10 +1,15 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 import {Rocket} from "../types/rocket";
+import {ThunkConfig} from "@/app/providers/StoreProvider";
 
-export const fetchRocketData = createAsyncThunk(
+export const fetchRocketData = createAsyncThunk<
+    Rocket[],
+    void,
+    ThunkConfig<string>
+>(
     'fetchRocketData',
-    async (type, thunkAPI) => {
+    async (_, thunkAPI) => {
         const url = ' https://api.spacexdata.com/v4/dragons'
 
         try {

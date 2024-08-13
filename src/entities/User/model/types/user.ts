@@ -1,10 +1,18 @@
-
 export interface User {
-    id: number;
-    username: string;
+    _id?: string;
+    email?: string;
+    isActivated?: boolean;
+}
+
+export interface AuthResponse {
+    accessToken: string,
+    refreshToken: string,
+    user: User
 }
 
 export interface UserSchema {
-    authData: User;
-    _inited?: boolean;
+    isLoading?: boolean;
+    error?: string;
+    authData?: User;
+    _inited: boolean;
 }

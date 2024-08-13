@@ -1,5 +1,4 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
-import cls from './PersonCard.module.scss';
 import {memo} from "react";
 import {Card} from "@/shared/ui/Card";
 import {Image} from "@/shared/ui/Image/Image";
@@ -25,8 +24,8 @@ export const PersonCard = memo((props: PersonCardProps) => {
             <Image
                 src={PersonImg}
             />
-            <VStack>
-                <Text text={'St. Mechanic'} variant={'accent'}/>
+            <VStack align={'center'} justify={'center'} gap={'10'}>
+                <Text text={'St. Mechanic'} variant={'secondary'}/>
                 <Text text={'Dave Johnson'}/>
             </VStack>
         </Card>

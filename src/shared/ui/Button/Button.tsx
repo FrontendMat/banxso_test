@@ -1,26 +1,14 @@
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import {classNames, Mods} from '@/shared/lib/classNames/classNames';
 import {
-    ButtonHTMLAttributes, FC, memo, ReactNode,
+    ButtonHTMLAttributes, memo, ReactNode,
 } from 'react';
 import cls from './Button.module.scss';
 
-export enum ButtonTheme {
-    CLEAR = 'clear',
-    OUTLINE = 'outline',
-    BACKGROUND = 'background',
-}
-
-export enum ButtonSize {
-    M = 'size_m',
-    L = 'size_l',
-    XL = 'size_xl',
-}
-
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     className?: string;
-    theme?: ButtonTheme;
+    clear?: boolean;
+    noHover?: boolean;
     square?: boolean;
-    size?: ButtonSize;
     disabled?: boolean;
     children?: ReactNode;
 }
@@ -29,17 +17,17 @@ export const Button = memo((props: ButtonProps) => {
     const {
         className,
         children,
-        theme = ButtonTheme.OUTLINE,
+        clear= false,
         square,
+        noHover,
         disabled,
-        size = ButtonSize.M,
         ...otherProps
     } = props;
 
     const mods: Mods = {
-        [cls[theme]]: true,
+        [cls.clear]: clear,
         [cls.square]: square,
-        [cls[size]]: true,
+        [cls.noHover]: noHover,
         [cls.disabled]: disabled,
     };
 

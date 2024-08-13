@@ -8,7 +8,7 @@ import {Image} from "@/shared/ui/Image/Image";
 import ArrowR from "@/shared/assets/arrow_right.png";
 import ArrowL from "@/shared/assets/arrow_left.png";
 import {HStack, VStack} from "@/shared/ui/Stack";
-import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
+import {Button} from "@/shared/ui/Button/Button";
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 interface SwiperProps {
@@ -43,13 +43,14 @@ export const CustomSwiper = memo((props: SwiperProps) => {
                 <VStack className={cls.fixedSlide}>
                     {block}
                     <HStack
+                        align={'center'}
                         className={cls.btnWrapper}
                         gap={'14'}
                     >
                         <Button
                             onClick={slidePrev}
                             square
-                            theme={ButtonTheme.CLEAR}
+                            clear
                         >
                             <Card
                                 color={'primary'}
@@ -64,7 +65,7 @@ export const CustomSwiper = memo((props: SwiperProps) => {
                         </Button>
                         <Button
                             square
-                            theme={ButtonTheme.CLEAR}
+                            clear
                             onClick={slideNext}
                         >
                             <Card

@@ -1,6 +1,6 @@
 import {Rocket} from "../model/types/rocket";
 
-export const transformRocketData = (rocket?: Rocket, isFullInfo?: boolean) => {
+export const transformRocketData = (rocket?: Rocket) => {
     const formatValue = (meters?: number, feet?: number, unitM: string = "M", unitFT: string = "FT") => {
         const m = meters !== undefined ? `${meters} ${unitM}` : "N/A";
         const ft = feet !== undefined ? `${feet} ${unitFT}` : "N/A";

@@ -8,3 +8,9 @@
     padding: 24px;
     margin-bottom: 50px;
 }
+
+.btn {
+    &:hover {
+        color: var(--bg-color);
+    }
+}

@@ -18,6 +18,7 @@ export const RocketCardInfo = memo((props: RocketCardInfoProps) => {
         <VStack gap={'14'} max>
             {rocketInfo.map(item => (
                 <RocketCardInfoItem
+                    key={item.value}
                     title={item.name}
                     value={item.value}
                 />

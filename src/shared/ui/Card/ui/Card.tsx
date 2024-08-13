@@ -20,6 +20,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     maxHeight?: boolean;
     borderColor?: CardBorderColor;
     radius?: CardBorder;
+    animate?: boolean;
 }
 
 const paddingClasses: Record<CardPadding, string> = {
@@ -54,6 +55,7 @@ export const Card = (props: CardProps) => {
         padding= '24',
         children,
         radius = 'l',
+        animate,
         overflowHidden= false,
         width = 'default',
         borderColor= 'primary',
@@ -71,6 +73,7 @@ export const Card = (props: CardProps) => {
     const mods: Mods = {
         [cls.maxHeight]: maxHeight,
         [cls.overflowHidden]: overflowHidden,
+        [cls.animate]: animate
     }
 
     return (

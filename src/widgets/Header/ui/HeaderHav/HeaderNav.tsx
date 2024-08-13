@@ -4,28 +4,31 @@ import {memo, useMemo} from "react";
 import {HStack} from "@/shared/ui/Stack";
 import {Text} from "@/shared/ui/Text/Text";
 import {AppLink} from "@/shared/ui/AppLink/AppLink";
-import {RoutePath} from "@/shared/config/routeConfig";
+import {getHeaderNavItems} from "../../model/selectors/getHeaderNavItems";
+import {useSelector} from "react-redux";
 
 interface HeaderNavProps {
     className?: string
-}
-
-interface NavItem  {
-    title: string;
-    route: string;
 }
 
 export const HeaderNav = memo((props: HeaderNavProps) => {
     const {
         className,
     } = props;
+    const navItems = useSelector(getHeaderNavItems);
     
-    const array: NavItem[] = useMemo(() => [
-        {title: 'Home', route: RoutePath.home},
-        {title: 'About', route: ''},
-        {title: 'Qa', route: ''},
-        {title: 'Contact form', route: ''},
-    ], [])
+    const routes = navItems.map( item => (
+        <AppLink
+            to={item.route}
+            key={item.title}
+        >
+            <Text
+                title={item.title}
+                size={'m'}
+            />
+        </AppLink>
+    )
+    )
 
     return (
         <HStack
@@ -33,16 +36,7 @@ export const HeaderNav = memo((props: HeaderNavProps) => {
             gap={'40'}
             className={classNames(cls.HeaderNav, {}, [className])}
         >
-            {array.map(item => (
-                <AppLink
-                    to={item.route}
-                >
-                    <Text 
-                        title={item.title}
-                        size={'m'}
-                    /> 
-                </AppLink>
-            ))}
+            {routes}
         </HStack>
     );
 });

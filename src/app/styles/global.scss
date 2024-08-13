@@ -37,9 +37,17 @@
   --red-color: red;
   --green-color: green;
   --yellow-color: yellow;
+  --overlay-modal-color: rgba(0, 0, 0, 0.91);
 
   //Border
   --border-radius-m: 20px;
   --border-radius-l: 40px;
+
+  //Modal
+  --modal-z-index: 1000;
+
+  //Skeleton
+  --skeleton-color: #fff;
+  --skeleton-shadow: rgba(0 0 0 / 20%);
 }
 

@@ -1,1 +1,2 @@
-export {RocketDetailsPageAsync as RocketDetails} from "../RocketDetailsPage/ui/RocketDetailsPage/RocketDetailsPage.async"
+export {likedReducer} from './model/slice/likedSlice';
+export {RocketDetailsPageAsync as RocketDetailsPage} from "../RocketDetailsPage/ui/RocketDetailsPage/RocketDetailsPage.async"

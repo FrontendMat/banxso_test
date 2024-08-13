@@ -6,7 +6,6 @@ import {Rocket} from "../types/rocket";
 const initialState: RocketSchema = {
     data: undefined,
     isLoading: false,
-    inited: false,
     error: '',
 }
 export const rocketSlice = createSlice({
@@ -16,9 +15,6 @@ export const rocketSlice = createSlice({
         setCachedData: (state, action: PayloadAction<Rocket[]>) => {
             state.data = action.payload;
         },
-        setInited: (state) => {
-            state.inited = true;
-        }
     },
 
     extraReducers: (builder) => {
@@ -30,14 +26,12 @@ export const rocketSlice = createSlice({
             .addCase(fetchRocketData.fulfilled, (state, action: PayloadAction<Rocket[]>) => {
                 state.isLoading = false;
                 state.data = action.payload;
-                console.log('fff');
+                console.log(state.data)
                 localStorage.setItem('rocketData', JSON.stringify(action.payload));
-                state.inited = true;
             })
-            .addCase(fetchRocketData.rejected, (state) => {
+            .addCase(fetchRocketData.rejected, (state, action) => {
                 state.isLoading = false;
-                state.error = 'Error';
-                state.inited = true;
+                state.error = action.payload;
             })
     },
 })

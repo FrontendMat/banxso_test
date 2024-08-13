@@ -6,44 +6,63 @@ import {Image} from "@/shared/ui/Image/Image";
 import RocketGif from '@/shared/assets/rocket.gif';
 import {RocketCardInfo} from "../RocketCardInfo/RocketCardInfo";
 import {Text} from "@/shared/ui/Text/Text";
-import {findDataById} from "@/entities/Rocket/lib/findDataById";
+import {findDataById} from "../../lib/findDataById/findDataById";
 import {useSelector} from "react-redux";
 import {getRocketData} from "../../model/selectors/getRocketData";
 import {CustomSwiper} from "@/shared/ui/Swiper";
+import {Button} from "@/shared/ui/Button/Button";
+import {getUserAuthData} from "@/entities/User";
 
 interface RocketCardDetailsProps {
-    id?: string
+    id?: string;
+    onToggleLike: () => void;
+    isLiked?: boolean
 }
 
 export const RocketCardDetails = memo((props: RocketCardDetailsProps) => {
     const {
-        id,
+        id= '0',
+        isLiked,
+        onToggleLike
     } = props;
     const rocket = useSelector(getRocketData);
-    const rocketInfo = findDataById(rocket, id)
+    const isAuth = useSelector(getUserAuthData);
+    const rocketInfo = findDataById(rocket, id);
 
     const slidersArray = rocketInfo?.flickr_images?.map(img => [
         <Card
+            key={img}
             padding={'24'}
             borderColor={'secondary'}
             className={cls.card}
         >
             <Image
-                key={img}
                 src={img}
                 className={cls.slide}
             />
         </Card>
-    ])
+    ]);
 
     return (
         <div className={cls.container}>
-            <Text
-                className={cls.title}
-                title={rocketInfo?.name}
-                size={'xxl'}
-                bold
-            />
+            <HStack justify={'between'}>
+                <Text
+                    className={cls.title}
+                    title={rocketInfo?.name}
+                    size={'xxl'}
+                    bold
+                />
+                {isAuth &&
+                    <Button
+                        onClick={onToggleLike}
+                    >
+                        {isLiked
+                            ? 'Remove Like'
+                            : 'Set Like'
+                        }
+                    </Button>
+                }
+            </HStack>
             <Card padding={'24'} borderColor={'secondary'}>
                 <HStack gap={'24'} justify={'between'} align={'start'}>
                     <Card className={cls.img} padding={'24'} borderColor={'secondary'} radius={'m'}>

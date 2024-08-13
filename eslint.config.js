@@ -21,6 +21,7 @@ export default tseslint.config({
     indent: [2, 4],
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
+    'react-hooks/exhaustive-deps': 'error',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },

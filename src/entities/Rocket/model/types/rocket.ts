@@ -65,7 +65,7 @@ export interface Rocket {
     dry_mass_kg?: number;
     dry_mass_lb?: number;
     thrusters?: Thruster[];
-    wikipedia?: string;
-    description?: string;
+    // wikipedia?: string;
+    // description?: string;
     id?: string;
 }

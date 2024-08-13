@@ -10,6 +10,11 @@ export default defineConfig({
         ],
     },
     define: {
-        __API__: JSON.stringify('http://localhost:8000'),
+        __API__: JSON.stringify('http://localhost:5000/api/'),
+    },
+    build: {
+        rollupOptions: {
+            // https://rollupjs.org/configuration-options/
+        },
     },
 })

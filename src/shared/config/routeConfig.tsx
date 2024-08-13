@@ -1,7 +1,8 @@
 import { RouteProps } from 'react-router-dom'
 import {HomePage} from "@/pages/HomePage";
 import {NotFoundPage} from "@/pages/NotFoundPage";
-import {RocketDetails} from "@/pages/RocketDetailsPage";
+import {RocketDetailsPage} from "@/pages/RocketDetailsPage";
+import {UserPage} from "@/pages/UserPage";
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -13,6 +14,7 @@ export enum AppRoutes {
     ROCKET_DETAILS = 'rocket_details',
 
     //Private
+    USER = 'user',
 
     //LAST ROUTE
     NOT_FOUND = 'not_found',
@@ -21,6 +23,7 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.HOME]: '/',
     [AppRoutes.ROCKET_DETAILS]: '/details/', //+ id
+    [AppRoutes.USER]: '/user/', //+ id
 
     //LAST ROUTE
     [AppRoutes.NOT_FOUND]: '*'
@@ -34,7 +37,14 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     },
     [AppRoutes.ROCKET_DETAILS]: {
         path: `${RoutePath.rocket_details}:id`,
-        element: <RocketDetails/>,
+        element: <RocketDetailsPage/>,
+    },
+
+    //PRIVATE
+    [AppRoutes.USER]: {
+        path: `${RoutePath.user}:id`,
+        element: <UserPage/>,
+        authOnly: true
     },
 
     //LAST ROUTE

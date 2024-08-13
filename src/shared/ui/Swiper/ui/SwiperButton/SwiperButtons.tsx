@@ -33,14 +33,18 @@ export const SwiperButtons = memo((props: SwiperButtonProps) => {
             className={classNames(cls.SwiperButtons, mods, [className])}
         >
             <Button
-                theme={ButtonTheme.CLEAR}
+                clear
+                noHover
+                square
                 className={cls.btn}
                 onClick={onPrev}
             >
                 <Image src={PrevImg}/>
             </Button>
             <Button
-                theme={ButtonTheme.CLEAR}
+                clear
+                noHover
+                square
                 className={className}
                 onClick={onNext}
             >

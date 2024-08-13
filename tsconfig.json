@@ -5,7 +5,7 @@
     "noImplicitAny": true,
     "module": "ESNext",
     "target": "es5",
-    "types": ["node"],
+    "types": ["node", "jest"],
     "jsx": "react-jsx",
     "allowJs": true,
     "strict": true,
@@ -17,7 +17,7 @@
     },
     "allowSyntheticDefaultImports": true,
     "lib": [
-      "es2017",
+      "es2015",
       "dom"
     ]
   },
@@ -29,5 +29,6 @@
   "include": [
     "./src/**/*.ts",
     "./src/**/*.tsx",
+    "./config/jest/setupTests.ts"
   ]
 }
