@@ -7,6 +7,7 @@ import {RocketLikedItems} from "../RocketLikedItems/RocketLikedItems";
 import {toggleLike} from "../../model/services/toggleLike";
 import {useSelector} from "react-redux";
 import {getLikedData} from "../../model/selectors/getLikedData";
+import {Page} from "@/shared/ui/Page/Page";
 
 const RocketDetailsPage = memo(() => {
     const {id} = useParams();
@@ -27,7 +28,7 @@ const RocketDetailsPage = memo(() => {
     }, [dispatch, id])
 
     return (
-        <>
+        <Page>
             <RocketCardDetails
                 onToggleLike={onToggleLike}
                 isLiked={isLiked}
@@ -36,7 +37,7 @@ const RocketDetailsPage = memo(() => {
             <RocketLikedItems
                 data={likedData}
             />
-        </>
+        </Page>
     );
 });
 
