@@ -10,7 +10,7 @@ export default defineConfig({
         ],
     },
     define: {
-        __API__: JSON.stringify('https://banxo-tets-server.vercel.app/api/'),
+        __API__: JSON.stringify('https://banxo-tets-server.vercel.app/api'),
     },
     build: {
         rollupOptions: {
