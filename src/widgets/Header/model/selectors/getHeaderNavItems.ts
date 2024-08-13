@@ -27,7 +27,7 @@ export const getHeaderNavItems = createSelector(
         if (userData) {
             sidebarItemsList.push(
                 {
-                    route: RoutePath.user + userData._id,
+                    route: RoutePath.user + userData.id,
                     title: 'Account',
                     authOnly: true,
                 },
