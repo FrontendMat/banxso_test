@@ -1,50 +1,97 @@
-# React + TypeScript + Vite
+# Project Description
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern website for rocket enthusiasts with authentication capability
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Key Features
 
-## Expanding the ESLint configuration
+- **Login and Registration:** any user can sign up (with 2FA) or sign in and use all the features of the app
+- **Like Rockets:** only auth user can like rockets and see his liked list
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+### Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Vite**
+- **React + TS** 
+- **React-router-dom** 
+- **SCSS** 
+- **Redux Toolkit** 
+- **Axios** 
+- **Swiper:** for ui Swiper  
+- **Jest:** for unit tests. Configuration is located in ./config/jest.
+- **Cypress:** for e2e tests
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Architecture
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+The project is written according to the Feature-Sliced Design methodology.
+
+Read more (documentation): [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
+
+---
+
+### Scripts
+
+### `npm start`
+Starts the frontend project using Vite.
+
+### `npm run build`
+Builds the project by compiling TypeScript and bundling with Vite.
+
+### `npm run preview`
+Previews the production build locally using Vite.
+
+### `npm run lint:ts`
+Runs ESLint on ts/tsx files.
+
+### `npm run lint:ts:fix`
+Runs ESLint with auto-fix on ts/tsx files.
+
+### `npm run test`
+Runs all tests using Jest.
+
+### `npm run unit`
+Runs unit tests with Jest (can choose file to run test)
+
+---
+
+### CI pipeline
+
+The GitHub Actions configuration is located in /.github/workflows.
+In CI all types of tests project and Storybook builds and linting are executed.
+
+---
+
+### Deployment
+
+Run `npm run unit` to ensure there are no errors,
+then push your code into main branch.
+
+---
+
+### Development Environment
+
+Run `npm install` to install dependencies.
+
+In the project, the [vite.config.ts](./vite.config.ts) file contains the `__API_URL__` variable, 
+which is used to connect to the server. 
+
+---
+
+### Entities
+- [User](./src/entities/User) - only auth User
+- [Rocket](./src/entities/Rocket) - Rocket entitie
+- [Person](./src/entities/Person) - team User
+
+---
+
+### Features
+- [authByEmail](./src/features/authByEmail) - user Login and Registration
+
+---
+
+### Page Features
+- [toggleLike](./src/pages/RocketDetailsPage) - ability to like or unlike
