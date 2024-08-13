@@ -20,7 +20,7 @@ Modern website for rocket enthusiasts with authentication capability
 - **Redux Toolkit** 
 - **Axios** 
 - **Swiper:** for ui Swiper  
-- **Jest:** for unit tests. Configuration is located in ./config/jest.
+- **Jest:** for unit tests. Configuration is located in [./config/jest](./config/jest)
 - **Cypress:** for e2e tests
 
 ---
@@ -61,7 +61,7 @@ Runs unit tests with Jest (can choose file to run test)
 ### CI pipeline
 
 The GitHub Actions configuration is located in /.github/workflows.
-In CI all types of tests project and Storybook builds and linting are executed.
+In CI all project tests and builds are executed.
 
 ---
 
