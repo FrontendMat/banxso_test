@@ -27,7 +27,9 @@ const App = () => {
                         isntMainPage
                     />
                 }
-                {inited && <AppRouter/>}
+                <div className={'content'}>
+                    {inited && <AppRouter/>}
+                </div>
                 <InformBlock/>
             </Suspense>
         </div>
