@@ -29,7 +29,7 @@ const RocketDetailsPage = memo(() => {
     }, [dispatch, id])
 
     return (
-        <Page>
+        <>
             <RocketCardDetails
                 onToggleLike={onToggleLike}
                 isLiked={isLiked}
@@ -38,7 +38,7 @@ const RocketDetailsPage = memo(() => {
             <RocketLikedItems
                 data={likedData}
             />
-        </Page>
+        </>
     );
 });
 
