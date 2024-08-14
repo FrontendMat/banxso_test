@@ -10,7 +10,7 @@ import {useAppDispatch} from "@/shared/lib/hooks/redux";
 import {authActions} from "../../model/slice/authSlice";
 import {Text} from "@/shared/ui/Text/Text";
 import {HStack} from "@/shared/ui/Stack";
-import {loginByEmail} from "@/features/authByEmail/model/services/loginByEmail/loginByEmail";
+import {loginByEmail} from "../../model/services/loginByEmail/loginByEmail";
 import {registrateByEmail} from "../../model/services/registrateByEmail";
 import {getUserAuthData} from "@/entities/User";
 
@@ -96,6 +96,10 @@ const AuthForm = memo((props: AuthFormProps) => {
                     : <Text title={'Sign Up'} size={'xl'} bold/>
                 }
                 {error && <Text text={error}/>}
+                <HStack max justify={'between'}>
+                    <Text text={'Email: test@gmail.com'}/>
+                    <Text text={'Password: 123123'}/>
+                </HStack>
                 <Input
                     placeholder={'Email'}
                     type={'email'}
