@@ -97,8 +97,8 @@ const AuthForm = memo((props: AuthFormProps) => {
                 }
                 {error && <Text text={error}/>}
                 <HStack max justify={'between'}>
-                    <Text text={'Email: test@gmail.com'}/>
-                    <Text text={'Password: 123123'}/>
+                    <Text text={'Email: test@gmail.com'} uppercase={false}/>
+                    <Text text={'Password: 123123'} uppercase={false}/>
                 </HStack>
                 <Input
                     placeholder={'Email'}
