@@ -13,6 +13,7 @@ const HomePage = memo(() => {
             <RocketBlock className={cls.container}/>
             <AboutBlock className={cls.container}/>
             <TeamBlock className={cls.container}/>
+
         </Page>
     )
 });

@@ -8,6 +8,7 @@ import {toggleLike} from "../../model/services/toggleLike";
 import {useSelector} from "react-redux";
 import {getLikedData} from "../../model/selectors/getLikedData";
 import {Page} from "@/shared/ui/Page/Page";
+import {InformBlock} from "@/widgets/InformBlock";
 
 const RocketDetailsPage = memo(() => {
     const {id} = useParams();

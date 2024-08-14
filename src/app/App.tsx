@@ -22,15 +22,17 @@ const App = () => {
     return (
         <div className={'app'}>
             <Suspense fallback="">
-                {!isMainPage && 
+                {!isMainPage &&
                     <Header
                         isntMainPage
                     />
                 }
-                <div className={'content'}>
-                    {inited && <AppRouter/>}
-                </div>
-                <InformBlock/>
+                {inited &&
+                    <>
+                        <AppRouter/>
+                        <InformBlock/>
+                    </>
+                }
             </Suspense>
         </div>
     )
